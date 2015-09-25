@@ -216,6 +216,8 @@
 		9499DD3F1B51B2930041C261 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Sergey Kargopolov";
 				TargetAttributes = {
@@ -477,6 +479,7 @@
 				9499DD681B51B2930041C261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9499DD691B51B2930041C261 /* Build configuration list for PBXNativeTarget "SearchBarExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +488,7 @@
 				9499DD6B1B51B2930041C261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

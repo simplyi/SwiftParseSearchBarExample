@@ -31,12 +31,12 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     func searchBarSearchButtonClicked(searchBar: UISearchBar)
     {
         searchBar.resignFirstResponder()
-        println("Search word = \(searchBar.text)")
+        print("Search word = \(searchBar.text)")
         
-        var firstNameQuery = PFQuery(className:"Friends")
+        let firstNameQuery = PFQuery(className:"Friends")
         firstNameQuery.whereKey("first_name", containsString: searchBar.text)
         
-        var lastNameQuery = PFQuery(className:"Friends")
+        let lastNameQuery = PFQuery(className:"Friends")
         lastNameQuery.whereKey("last_name", matchesRegex: "(?i)\(searchBar.text)")
         // a regular expression that will match the search word and the value in the Parse class 
         // and the comparison will be case insensetive. 
@@ -45,13 +45,13 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         
         
         
-        var query = PFQuery.orQueryWithSubqueries([firstNameQuery, lastNameQuery])
+        let query = PFQuery.orQueryWithSubqueries([firstNameQuery, lastNameQuery])
         
         query.findObjectsInBackgroundWithBlock {
             (results: [AnyObject]?, error: NSError?) -> Void in
             
             if error != nil {
-                var myAlert = UIAlertController(title:"Alert", message:error?.localizedDescription, preferredStyle:UIAlertControllerStyle.Alert)
+                let myAlert = UIAlertController(title:"Alert", message:error?.localizedDescription, preferredStyle:UIAlertControllerStyle.Alert)
                 
                 let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
                 
@@ -101,7 +101,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let myCell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! UITableViewCell
+        let myCell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) 
         
         myCell.textLabel?.text = searchResults[indexPath.row]
         
